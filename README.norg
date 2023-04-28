@@ -1,0 +1,31 @@
+@document.meta
+title: README
+description: 
+authors: dan
+categories: 
+created: 2023-04-27
+updated: 2023-04-27
+version: 1.1.1
+@end
+
+* This repo is aimed for learning asyncio and websocket in python 
+** programs when I read
+   - {https://realpython.com/async-io-python/}[Async IO in Python: A Complete Walkthrough]
+   - {https://realpython.com/python-async-features/}[Getting Started With Async Features in Python]
+   - {https://realpython.com/python-sockets/}[Socket Programming in Python (Guide)]
+
+* Concepts
+** Coroutine (协程)
+   协程是一种特殊的生成器，它可以暂停执行并在稍后恢复。
+   协程可以看作是一个函数，但是它的执行过程可以在中间被挂起，然后在稍后的某个时候继续执行。
+
+
+** Callback
+
+** Events
+
+** Transport
+
+** Protocol
+
+** Future
