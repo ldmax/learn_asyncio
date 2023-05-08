@@ -1,0 +1,34 @@
+@document.meta
+title: stack and frame
+description: 
+authors: dan
+categories: 
+created: 2023-05-06
+updated: 2023-05-06
+version: 1.1.1
+@end
+
+
+栈和帧的概念已经比较熟悉了，一个栈帧的例子在
+{https://bbc.github.io/cloudfit-public-docs/asyncio/asyncio-part-1.html#a-quick-refresher-on-stacks-and-frames}[A quick fresher on stacks and frames]
+
+在syncronous的程序中，所有的函数都是如上面的例子中这样运行的。
+但在asyncronous程序中，程序运行的模型有所不同，如下图所示。
+
+{https://bbc.github.io/cloudfit-public-docs/images/asyncio/EventLoop.svg}[Eventloops, Tasks and Coroutines]
+
+可以看到与syncronous的程序不同在于，asyncronous的编程模型由
+- EventLoop
+- Task
+- Coroutine
+三部分组成。
+
+$ EventLoop
+目前可以把EventLoop看成一个在后台运行的线程，它来调度多个Tasks谁被激活谁被挂起。
+
+$ Task
+Task是一个对象，它的内部包含了上述的syncronous编程模型的栈帧。
+在任意时刻，只有一个Task被激活并且其中的Coroutine被执行。
+
+$ Coroutine
+Coroutine是在Task中的函数，只是这种函数可以在运行中间暂停并保存状态（所有的帧中的本地值）。
